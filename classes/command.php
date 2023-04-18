@@ -215,7 +215,7 @@ HELP;
 						@include_once $phpunit_autoload_path;
 
 						// Attempt to load PHUnit.  If it fails, we are done.
-						if ( ! $is_phar and ! class_exists('PHPUnit_Framework_TestCase'))
+						if ( ! $is_phar and ! class_exists('PHPUnit\Framework\TestCase'))
 						{
 							throw new Exception('PHPUnit does not appear to be installed.'.PHP_EOL.PHP_EOL."\tPlease visit http://phpunit.de and install.");
 						}
@@ -236,7 +236,7 @@ HELP;
 						// Respect the group options
 						\Cli::option('group') and $command .= ' --group '.\Cli::option('group');
 						\Cli::option('exclude-group') and $command .= ' --exclude-group '.\Cli::option('exclude-group');
-						
+
 						// Respect the testsuite options
 						\Cli::option('testsuite') and $command .= ' --testsuite '.\Cli::option('testsuite');
 
